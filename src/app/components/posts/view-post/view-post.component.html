@@ -1,0 +1,21 @@
+<mat-card class="post-card">
+    <mat-card-header>
+      <div mat-card-avatar class="post-header-image"></div>
+      <mat-card-title>{{ postData?.title }}</mat-card-title>
+      <mat-card-subtitle>Posted by: {{ postData?.author }} | Posted on: {{ postData?.date | date:'medium' }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <img mat-card-image [src]="postData?.image" alt="Post Image" class="post-image" />
+      <p class="post-content">{{ postData?.content }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" class="like-button">
+        {{ postData?.likeCount }} <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-raised-button color="primary" class="view-button">
+        {{ postData?.viewCount }} <mat-icon>remove_red_eye</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>

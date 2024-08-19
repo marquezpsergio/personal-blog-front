@@ -1,0 +1,44 @@
+<header>
+  <mat-toolbar color="primary">
+    <!-- Menu Button (visible on mobile) -->
+    <button mat-icon-button aria-label="Menu" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Blog Title -->
+    <span class="title">
+      <a routerLink="/" class="title-link">OnePostD<b>AI</b>ly Blog</a>
+    </span>
+
+    <!-- Spacer -->
+    <span class="spacer"></span>
+
+    <!-- Action Buttons -->
+    <button mat-raised-button color="accent" routerLink="/create-post" aria-label="Create New Post">Create New
+      Post</button>
+    <button mat-raised-button color="accent" routerLink="/view-all" aria-label="View All Posts">View All Posts</button>
+
+    <!-- Icon Buttons -->
+    <button mat-icon-button aria-label="Favorite">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Share">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <!-- Side Navigation Menu for Mobile -->
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" position="start" class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/create-post">Create New Post</a>
+        <a mat-list-item routerLink="/view-all">View All Posts</a>
+        <a mat-list-item routerLink="/">Home</a>
+        <!-- Add more links here if needed -->
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet />
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</header>

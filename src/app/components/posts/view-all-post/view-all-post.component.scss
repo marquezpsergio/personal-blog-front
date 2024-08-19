@@ -1,0 +1,125 @@
+.card-container {
+  margin: 16px;
+  max-width: 60%;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra suave para un tema claro
+  display: flex;
+  flex-direction: column;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+  border-radius: 50%;
+}
+
+mat-card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+mat-card-subtitle {
+  font-size: 1rem;
+}
+
+mat-grid-list {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px; // Añade padding alrededor del contenido
+  flex: 1; // Permite que el contenido crezca
+}
+
+mat-card-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 5px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 16px;
+}
+
+mat-card-actions button {
+  margin-right: 8px;
+  color: #ffffff; // Color del texto del botón
+}
+
+mat-card-actions button.like-button {
+  background-color: #e53935; // Rojo intenso para likes
+}
+
+mat-card-actions button.view-button {
+  background-color: #1e88e5; // Azul para views
+  margin-left: 5px;
+}
+
+mat-card-actions button.view-post-button {
+  background-color: #6200ea; // Púrpura para View Post
+  margin-left: 5px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #d0d0d0; // Línea horizontal en gris claro
+  margin: 16px 0;
+}
+
+.mat-icon {
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    max-width: 100%;
+    padding-bottom: 20px;
+  }
+
+  mat-grid-tile {
+    colspan: 1; // Ajusta para ocupar toda la fila en pantallas pequeñas
+    rowspan: auto; // Permite que el tile se ajuste en función del contenido
+  }
+
+  mat-card {
+    padding: 8px;
+  }
+
+  mat-card-title {
+    font-size: 1.2rem;
+  }
+
+  mat-card-subtitle {
+    font-size: 0.9rem;
+  }
+
+  mat-card-content {
+    padding: 12px; // Reduce el padding en pantallas pequeñas para aprovechar el espacio
+  }
+
+  mat-card-content p {
+    font-size: 0.9rem;
+  }
+}

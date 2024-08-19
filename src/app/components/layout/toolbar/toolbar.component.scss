@@ -1,0 +1,81 @@
+header {
+  mat-toolbar {
+    background-color: #1976d2; /* Color del toolbar */
+    color: #ffffff;
+    padding: 0 16px; /* Ajuste del padding del toolbar */
+
+    .title {
+      font-size: 1.5rem; /* Tamaño de la fuente del título */
+      font-weight: 500;
+
+      .title-link {
+        color: #ffffff;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline; /* Subrayado en hover */
+        }
+      }
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    button[mat-raised-button] {
+      margin-left: 8px; /* Espacio entre los botones */
+      text-transform: none; /* Evita mayúsculas */
+    }
+
+    button[mat-icon-button] {
+      margin-left: 8px; /* Espacio entre icon buttons */
+    }
+  }
+
+  /* Estilos para el menú lateral en dispositivos móviles */
+  .sidenav {
+    width: 250px;
+
+    mat-nav-list {
+      mat-list-item {
+        padding: 16px;
+        text-align: center;
+        a {
+          color: #000000; /* Color del texto de los links */
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline; /* Subrayado en hover */
+        }
+      }
+    }
+  }
+
+  /* Estilo del contenedor del sidenav */
+  mat-sidenav-container {
+    height: 100vh;
+    .mat-sidenav-content {
+      padding: 16px;
+    }
+  }
+
+  /* Media query para ajustar la visibilidad en dispositivos móviles */
+  @media (max-width: 600px) {
+    mat-toolbar {
+      .title {
+        font-size: 1.2rem; /* Tamaño de fuente ajustado para móviles */
+      }
+
+      .spacer {
+        display: none; /* Oculta el spacer en móviles */
+      }
+
+      button[mat-raised-button] {
+        display: none; /* Oculta los botones en móviles */
+      }
+
+      button[mat-icon-button] {
+        margin-left: 0; /* Ajuste del margen para iconos en móviles */
+      }
+    }
+  }
+}
