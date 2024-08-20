@@ -98,11 +98,6 @@ hr {
     padding-bottom: 20px;
   }
 
-  mat-grid-tile {
-    colspan: 1; // Ajusta para ocupar toda la fila en pantallas pequeñas
-    rowspan: auto; // Permite que el tile se ajuste en función del contenido
-  }
-
   mat-card {
     padding: 8px;
   }

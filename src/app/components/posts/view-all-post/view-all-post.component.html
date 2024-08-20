@@ -1,5 +1,5 @@
 <div *ngIf="posts$ | async as posts; else loading">
-  <div class="card-container" *ngFor="let item of posts">
+  <ng-container *ngFor="let item of posts">
     <mat-card>
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
@@ -14,7 +14,7 @@
             <img mat-card-image [src]="item.image" class="post-image" alt="Card Image" />
           </mat-grid-tile>
           <mat-grid-tile [colspan]="3" [rowspan]="1">
-            <p>{{ truncateText(item.content, 200) }}</p>
+            <p>{{ item.content | truncate:200 }}</p>
           </mat-grid-tile>
         </mat-grid-list>
       </mat-card-content>
@@ -23,13 +23,12 @@
         <button mat-raised-button color="primary" class="like-button">{{ item.likeCount }} <mat-icon>favorite</mat-icon>
         </button>
         <button mat-raised-button color="primary" class="view-button">{{ item.viewCount }}
-          <mat-icon>remove_red_eye
-          </mat-icon></button>
+          <mat-icon>remove_red_eye</mat-icon></button>
         <button mat-raised-button color="primary" class="view-post-button" routerLink="/view-post/{{ item.id }}">View
           Post</button>
       </mat-card-actions>
     </mat-card>
-  </div>
+  </ng-container>
 </div>
 
 <ng-template #loading>

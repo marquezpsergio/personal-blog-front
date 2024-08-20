@@ -14,9 +14,10 @@
     <span class="spacer"></span>
 
     <!-- Action Buttons -->
-    <button mat-raised-button color="accent" routerLink="/create-post" aria-label="Create New Post">Create New
-      Post</button>
-    <button mat-raised-button color="accent" routerLink="/view-all" aria-label="View All Posts">View All Posts</button>
+    <ng-container *ngIf="!isMobile">
+      <button mat-raised-button color="accent" routerLink="/create-post" aria-label="Create New Post">Create New Post</button>
+      <button mat-raised-button color="accent" routerLink="/view-all" aria-label="View All Posts">View All Posts</button>
+    </ng-container>
 
     <!-- Icon Buttons -->
     <button mat-icon-button aria-label="Favorite">

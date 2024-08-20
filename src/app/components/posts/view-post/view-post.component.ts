@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../../services/posts/post.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
@@ -10,9 +10,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, MaterialModule],
   templateUrl: './view-post.component.html',
-  styleUrl: './view-post.component.scss',
+  styleUrls: ['./view-post.component.scss'],
 })
-export class ViewPostComponent {
+export class ViewPostComponent implements OnInit {
   postId: any;
   postData: any;
 

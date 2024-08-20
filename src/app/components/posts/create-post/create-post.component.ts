@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -17,9 +17,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule, MaterialModule],
   templateUrl: './create-post.component.html',
-  styleUrl: './create-post.component.scss',
+  styleUrls: ['./create-post.component.scss'],
 })
-export class CreatePostComponent {
+export class CreatePostComponent implements OnInit {
   postForm!: FormGroup;
   tags: string[] = [];
 
