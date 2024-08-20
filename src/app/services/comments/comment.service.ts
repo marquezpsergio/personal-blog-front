@@ -10,11 +10,7 @@ const BASIC_URL = 'http://localhost:8080/blog/api/comments';
 export class CommentService {
   constructor(private http: HttpClient) {}
 
-  createNewComment(
-    postId: number,
-    author: string,
-    content: string
-  ): Observable<any> {
+  createNewComment(postId: number, author: string, content: string): Observable<any> {
     const params = new HttpParams()
       .set('postId', postId.toString())
       .set('author', author)

@@ -31,6 +31,10 @@ export class CreatePostComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.initializeForm();
+  }
+
+  private initializeForm(): void {
     this.postForm = this.fb.group({
       title: [null, Validators.required],
       content: [null, Validators.required],
@@ -39,34 +43,29 @@ export class CreatePostComponent implements OnInit {
     });
   }
 
-  addTag(event: any) {
+  addTag(event: any): void {
     const value = (event.value || '').trim();
-
     if (value) {
       this.tags.push(value);
     }
-
     event.chipInput!.clear();
   }
 
-  removeTag(tag: string) {
+  removeTag(tag: string): void {
     const index = this.tags.indexOf(tag);
-
     if (index >= 0) {
       this.tags.splice(index, 1);
     }
   }
 
-  createPost() {
-    const data = this.postForm.value;
-    data.tags = this.tags;
-
+  createPost(): void {
     if (this.postForm.valid) {
+      const data = { ...this.postForm.value, tags: this.tags };
       this.createPostRequest(data);
     }
   }
 
-  private createPostRequest(data: any) {
+  private createPostRequest(data: any): void {
     this.postService.createNewPost(data).subscribe(
       () => {
         this.snackBar.open('Post created successfully', 'Close', {
@@ -80,7 +79,7 @@ export class CreatePostComponent implements OnInit {
     );
   }
 
-  private handleError(error: any) {
+  private handleError(error: any): void {
     this.snackBar.open('Failed to create post: ' + error, 'Close', {
       duration: 3000,
     });

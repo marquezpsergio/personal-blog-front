@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { CreatePostComponent } from './components/posts/create-post/create-post.component';
-import { HomeComponent } from './components/home/home.component';
 import { ViewAllPostComponent } from './components/posts/view-all-post/view-all-post.component';
 import { ViewPostComponent } from './components/posts/view-post/view-post.component';
 import { SearchPostComponent } from './components/posts/search-post/search-post.component';

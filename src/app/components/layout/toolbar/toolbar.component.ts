@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   Router,
   RouterLink,
@@ -25,26 +25,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent implements OnInit {
-  isMobile: boolean = false;
+export class ToolbarComponent {
   searchTitle: string = '';
 
   constructor(private router: Router, private snackBar: MatSnackBar) {}
-
-  ngOnInit() {
-    this.checkWindowSize();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.checkWindowSize();
-  }
-
-  private checkWindowSize() {
-    if (typeof window !== 'undefined') {
-      this.isMobile = window.innerWidth <= 600;
-    }
-  }
 
   searchPostByTitle() {
     if (this.searchTitle.trim().length >= 2) {
