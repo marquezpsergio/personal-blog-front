@@ -21,11 +21,6 @@ header {
       flex: 1 1 auto;
     }
 
-    button[mat-raised-button] {
-      margin-left: 8px; /* Espacio entre los botones */
-      text-transform: none; /* Evita mayúsculas */
-    }
-
     button[mat-icon-button] {
       margin-left: 8px; /* Espacio entre icon buttons */
     }
@@ -47,6 +42,7 @@ header {
           text-decoration: underline; /* Subrayado en hover */
         }
       }
+      padding: 5px;
     }
   }
 
@@ -67,10 +63,6 @@ header {
 
       .spacer {
         display: none; /* Oculta el spacer en móviles */
-      }
-
-      button[mat-raised-button] {
-        display: none; /* Oculta los botones en móviles */
       }
 
       button[mat-icon-button] {

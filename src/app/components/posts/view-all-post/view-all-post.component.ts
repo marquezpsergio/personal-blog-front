@@ -16,7 +16,7 @@ import { TruncateModule } from '../../../modules/TruncateModule';
   styleUrls: ['./view-all-post.component.scss'],
 })
 export class ViewAllPostComponent implements OnInit {
-  posts$: Observable<any[]> | undefined;
+  posts: any[] = [];
 
   constructor(
     private postService: PostService,
@@ -28,13 +28,31 @@ export class ViewAllPostComponent implements OnInit {
   }
 
   loadPosts(): void {
-    this.posts$ = this.postService.getAllPosts().pipe(
+    this.postService.getAllPosts().pipe(
       catchError((error) => {
         this.snackBar.open('Failed to get posts: ' + error.message, 'Close', {
           duration: 3000,
         });
         return of([]);
       })
-    );
+    ).subscribe((data) => {
+      this.posts = data;
+    });
+  }
+
+  likePost(postId: number): void {
+    this.postService.likePost(postId).subscribe({
+      next: () => {
+        this.snackBar.open('Post liked successfully', 'Close', {
+          duration: 3000,
+        });
+        this.loadPosts();
+      },
+      error: (error) => {
+        this.snackBar.open('Failed to like post: ' + error.message, 'Close', {
+          duration: 3000,
+        });
+      }
+    });
   }
 }

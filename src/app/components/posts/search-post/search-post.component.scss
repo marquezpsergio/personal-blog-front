@@ -1,0 +1,123 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input mat-form-field {
+  flex: 1;
+}
+
+.search-input button {
+  margin-left: 10px;
+}
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.post-card {
+  width: 100%;
+  max-width: 600px;
+  margin: 10px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  flex: 1;
+}
+
+mat-card-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 5px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 16px;
+}
+
+mat-card-actions button {
+  margin-right: 8px;
+  color: #ffffff;
+}
+
+mat-card-actions button.like-button {
+  background-color: #e53935;
+}
+
+mat-card-actions button.view-button {
+  background-color: #1e88e5;
+}
+
+mat-card-actions button.view-post-button {
+  background-color: #6200ea;
+}
+
+.mat-icon {
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .post-card {
+    padding: 12px;
+  }
+
+  .post-image {
+    margin-top: 12px;
+  }
+
+  mat-card-content {
+    padding: 12px;
+  }
+
+  mat-card-content p {
+    font-size: 0.9rem;
+  }
+}
